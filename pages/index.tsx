@@ -105,12 +105,25 @@ const Home = () => {
       message += '\n';
     });
 
+    message += `Try it on: https://wordle-clone-production.up.railway.app/`;
     clipboard.copy(message);
   };
 
   return (
     <div className="h-screen w-full flex flex-col items-center py-16 space-y-10">
-      <h1 className="text-5xl font-semibold text-purple-700">Wordle clone</h1>
+      <div className="flex flex-col space-y-1 items-center">
+        <h1 className="text-5xl font-semibold text-purple-700">Wordle clone</h1>
+        <small>
+          <a
+            href="https://www.powerlanguage.co.uk/wordle/"
+            rel="noreferrer noopener"
+            target="_blank"
+            className="underline"
+          >
+            Play the original
+          </a>
+        </small>
+      </div>
 
       {gameState === GameState.WON && (
         <div className="flex flex-col items-center space-y-2">
