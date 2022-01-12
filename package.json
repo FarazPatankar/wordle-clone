@@ -9,7 +9,13 @@
   "dependencies": {
     "next": "latest",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "use-clipboard-copy": "^0.2.0"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "trailingComma": "all",
+    "singleQuote": true
   },
   "devDependencies": {
     "@types/node": "^12.12.21",
