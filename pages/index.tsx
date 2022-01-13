@@ -105,7 +105,7 @@ const Home = () => {
       message += '\n';
     });
 
-    message += `Try it on: https://wordle-clone-production.up.railway.app/`;
+    message += `Try it on: https://wordle.up.railway.app/`;
     clipboard.copy(message);
   };
 
@@ -162,7 +162,6 @@ const Home = () => {
       )}
 
       {error && <p className="text-red-500">{error}</p>}
-      <p className="text-green-500 text-2xl">{answer}</p>
       <div className="flex flex-col space-y-1">
         {ROWS.map((row) => (
           <>
