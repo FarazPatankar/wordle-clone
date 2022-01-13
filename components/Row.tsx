@@ -4,7 +4,10 @@ export const CurrentRow = ({ currentGuess }: { currentGuess: string }) => {
   return (
     <div className="flex space-x-1">
       {CELLS.map((cell) => (
-        <div className="h-10 w-10 rounded border border-gray-300 bg-gray-50 flex items-center justify-center">
+        <div
+          key={cell}
+          className="h-10 w-10 rounded border border-gray-300 bg-gray-50 flex items-center justify-center"
+        >
           {currentGuess[cell]}
         </div>
       ))}
@@ -15,8 +18,11 @@ export const CurrentRow = ({ currentGuess }: { currentGuess: string }) => {
 export const EmptyRow = () => {
   return (
     <div className="flex space-x-1">
-      {CELLS.map(() => (
-        <div className="h-10 w-10 rounded border border-gray-300 bg-gray-50" />
+      {CELLS.map((cell) => (
+        <div
+          key={cell}
+          className="h-10 w-10 rounded border border-gray-300 bg-gray-50"
+        />
       ))}
     </div>
   );
@@ -41,6 +47,7 @@ export const CompletedRow = ({
         }
         return (
           <div
+            key={cell}
             className={`h-10 w-10 rounded border border-gray-300 flex items-center justify-center ${bgColor}`}
           >
             {guess[cell]}

@@ -164,7 +164,7 @@ const Home = () => {
       {error && <p className="text-red-500">{error}</p>}
       <div className="flex flex-col space-y-1">
         {ROWS.map((row) => (
-          <>
+          <div key={row}>
             {row < guesses.length && (
               <CompletedRow guess={guesses[row]} answer={answer} />
             )}
@@ -172,7 +172,7 @@ const Home = () => {
               <CurrentRow currentGuess={currentGuess} />
             )}
             {row > guesses.length && <EmptyRow />}
-          </>
+          </div>
         ))}
       </div>
 
@@ -181,7 +181,10 @@ const Home = () => {
           <div className="flex space-x-1 justify-center">
             {KEYBOARD[key].map((letter) => (
               <button
-                className="h-10 w-10 rounded border border-gray-300 bg-gray-50 flex items-center justify-center"
+                key={letter}
+                className={`h-8 md:h-10 text-sm md:text-base rounded border border-gray-300 bg-gray-50 flex items-center justify-center ${
+                  letter === 'ENTER' ? 'w-16' : 'w-8 md:w-10'
+                }`}
                 onClick={() => updateCurrentGuess(letter)}
               >
                 {letter}
